@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+</head>
+<body>	
+	<table>
+		{% for item in context %}
+		<tr>
+			<td>ID:{{ item.id }}</td>
+			<td>Name:{{ item.name }}</td>
+			<td>Address:{{ item.address }}</td>
+			<td>Email: {{ item.email }}</td>
+			<td>Mobile:{{ item.mobile }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+</body>
+</html>

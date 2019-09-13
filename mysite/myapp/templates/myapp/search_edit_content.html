@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+</head>
+<body>
+	<p>ID: {{ id }}</p>
+	<p>Name: {{ name }}</p>
+	<p>Address: {{ address }}</p>
+	<p>Email: {{ email }}</p>
+	<p>Mobile: {{ mobile }}</p>
+	<br/>
+
+	<h4>Update Content</h4><br/>
+
+	<form action="update_content" method="post">
+		{% csrf_token %}
+		ID:		<input type="text" name="txt_id" value="{{ id }}"><br/><br/>
+		Name:	<input type="text" name="txt_name"><br/><br/>
+		Address:<input type="text" name="txt_address"><br/><br/>
+		Email:	<input type="text" name="txt_email"><br/><br/>
+		Mobile: <input type="text" name="txt_mobile"><br/><br/>
+		<input type="submit" value="Update">
+</body>
+</html>

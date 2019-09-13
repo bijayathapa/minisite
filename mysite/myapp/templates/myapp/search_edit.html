@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+</head>
+<body>
+	<form action="update" method="post">
+		{% csrf_token %}
+		ID: <input type="text" name="txt_id">
+		<input type="submit" value="Search">
+	</form>
+</body>
+</html>
