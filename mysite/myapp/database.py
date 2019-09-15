@@ -100,4 +100,16 @@ def update(id,name,address,email,mobile):
 	except Error as e:
 		print(e)
 
+def delete(id):
+	sql_delete_query = """DELETE FROM tbl_person WHERE person_id = %s"""
+	data = (id)
+	try:
+		conn = pymysql.connect("localhost","root","",DB_FILE)
+		cur = conn.cursor()
+		cur.execute(sql_delete_query,data)
+		conn.commit()
+		conn.close()
+		print("Deleted")
+	except Error as e:
+		print(e)
 

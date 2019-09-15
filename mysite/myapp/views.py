@@ -12,6 +12,7 @@ def index(request):
 	str_html = str_html + "<p><a href = 'search'>SEARCH RECORD</a></p>"
 	str_html = str_html + "<p><a href = 'listall'>DISPLAY RECORD</a></p>"
 	str_html = str_html + "<p><a href = 'search_edit'>UPDATE RECORD</a></p>"
+	str_html = str_html + "<p><a href = 'search_delete'>DELETE RECORD</a></p>"
 
 	return HttpResponse(str_html) 
 
@@ -73,4 +74,14 @@ def update_content(request):
 	database.update(id,name,address,email,mobile)
 	return render (request,'myapp/update_result.html',values)
 
-	
+def search_delete(request):
+	return render(request,'myapp/search_delete.html')
+
+def search_delete_content(request):
+	id = request.POST.get('txt_id')
+	return render(request,'myapp/search_delete_content.html',database.search(id))
+
+def delete_content(request):
+	id = request.POST.get('txt_id')
+	database.delete(id)
+	return render(request,'myapp/deleted.html')
